@@ -529,9 +529,10 @@ SUBSYSTEM_DEF(job)
 	if(player_client)
 		if(job.req_admin_notify)
 			to_chat(player_client, "<span class='infoplain'><b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b></span>")
+		/* Vrell - Commenting out for now. Might have an alternative thing later? IDK
 		if(CONFIG_GET(number/minimal_access_threshold))
 			to_chat(player_client, span_notice("<B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B>"))
-
+		*/
 		var/related_policy = get_policy(job.title)
 		if(related_policy)
 			to_chat(player_client, related_policy)

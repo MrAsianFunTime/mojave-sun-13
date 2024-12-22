@@ -1,3 +1,8 @@
+//Vrell - due to implementation concerns with the wipe emote, this is a global define.
+#define STORM_MAXIMUM_BLINDNESS 100
+
+/mob/living
+	var/weather_blindness_amount = 0
 
 /datum/particle_weather/dust_storm
 	name = "dust storm"
@@ -15,13 +20,19 @@
 	immunity_type = TRAIT_DUSTSTORM_IMMUNE
 	probability = 40
 	target_trait = PARTICLEWEATHER_DUST
+	var/storm_blindness_per_tick = 6.5
 
 /datum/particle_weather/dust_storm/weather_act(mob/living/carbon/L)
 	if(HAS_TRAIT(L, TRAIT_WEARING_GAS_MASK))
 		return
 
 	if(ishuman(L) && !L.is_eyes_covered())
-		L.adjust_blurriness(6.5)
+		if(L.weather_blindness_amount <= (STORM_MAXIMUM_BLINDNESS - storm_blindness_per_tick))
+			L.weather_blindness_amount += storm_blindness_per_tick
+			L.adjust_blurriness(storm_blindness_per_tick)
+		else
+			L.adjust_blurriness(STORM_MAXIMUM_BLINDNESS - L.weather_blindness_amount)
+			L.weather_blindness_amount = STORM_MAXIMUM_BLINDNESS
 
 /datum/particle_weather/radiation_storm
 	name = "radiation storm"
@@ -76,10 +87,16 @@
 	immunity_type = TRAIT_RAINSTORM_IMMUNE
 	probability = 5
 	target_trait = PARTICLEWEATHER_RAIN
+	var/storm_blindness_per_tick = 1
 
 /datum/particle_weather/rain_gentle/weather_act(mob/living/L)
 	if(HAS_TRAIT(L, TRAIT_WEARING_GAS_MASK))
-		L.adjust_blurriness(1)
+		if(L.weather_blindness_amount <= (STORM_MAXIMUM_BLINDNESS - storm_blindness_per_tick))
+			L.weather_blindness_amount += storm_blindness_per_tick
+			L.adjust_blurriness(storm_blindness_per_tick)
+		else
+			L.adjust_blurriness(STORM_MAXIMUM_BLINDNESS - L.weather_blindness_amount)
+			L.weather_blindness_amount = STORM_MAXIMUM_BLINDNESS
 		if(prob(10))
 			to_chat(L, "The [src] obscures your gas mask!")
 		return
@@ -100,10 +117,16 @@
 	immunity_type = TRAIT_RAINSTORM_IMMUNE
 	probability = 0
 	target_trait = PARTICLEWEATHER_RAIN
+	var/storm_blindness_per_tick = 1
 
 /datum/particle_weather/rain_storm/weather_act(mob/living/L)
 	if(HAS_TRAIT(L, TRAIT_WEARING_GAS_MASK))
-		L.adjust_blurriness(1.5)
+		if(L.weather_blindness_amount <= (STORM_MAXIMUM_BLINDNESS - storm_blindness_per_tick))
+			L.weather_blindness_amount += storm_blindness_per_tick
+			L.adjust_blurriness(storm_blindness_per_tick)
+		else
+			L.adjust_blurriness(STORM_MAXIMUM_BLINDNESS - L.weather_blindness_amount)
+			L.weather_blindness_amount = STORM_MAXIMUM_BLINDNESS
 		if(prob(10))
 			to_chat(L, "The [src] obscures your gas mask!")
 		return
@@ -124,10 +147,16 @@
 	immunity_type = TRAIT_SNOWSTORM_IMMUNE
 	probability = 1
 	target_trait = PARTICLEWEATHER_SNOW
+	var/storm_blindness_per_tick = 2.5
 
 /datum/particle_weather/snow_gentle/weather_act(mob/living/L)
 	if(HAS_TRAIT(L, TRAIT_WEARING_GAS_MASK))
-		L.adjust_blurriness(2.5)
+		if(L.weather_blindness_amount <= (STORM_MAXIMUM_BLINDNESS - storm_blindness_per_tick))
+			L.weather_blindness_amount += storm_blindness_per_tick
+			L.adjust_blurriness(storm_blindness_per_tick)
+		else
+			L.adjust_blurriness(STORM_MAXIMUM_BLINDNESS - L.weather_blindness_amount)
+			L.weather_blindness_amount = STORM_MAXIMUM_BLINDNESS
 		if(prob(10))
 			to_chat(L, "The [src] obscures your gas mask!")
 		return
@@ -148,15 +177,26 @@
 	immunity_type = TRAIT_SNOWSTORM_IMMUNE
 	probability = 1
 	target_trait = PARTICLEWEATHER_SNOW
+	var/storm_blindness_per_tick = 3.5
 
 //Makes you a lot little chilly
 /datum/particle_weather/snow_storm/weather_act(mob/living/L)
 	if(HAS_TRAIT(L, TRAIT_WEARING_GAS_MASK))
-		L.adjust_blurriness(3.5) // Snow sticks to your mask even worse than it gets into your mf eyes
+		if(L.weather_blindness_amount <= (STORM_MAXIMUM_BLINDNESS - storm_blindness_per_tick))
+			L.weather_blindness_amount += storm_blindness_per_tick
+			L.adjust_blurriness(storm_blindness_per_tick)
+		else
+			L.adjust_blurriness(STORM_MAXIMUM_BLINDNESS - L.weather_blindness_amount)
+			L.weather_blindness_amount = STORM_MAXIMUM_BLINDNESS
 		if(prob(10))
 			to_chat(L, "The [src] obscures your gas mask!")
 		return
 
 	if(ishuman(L) && !L.is_eyes_covered())
-		L.adjust_blurriness(2.5)
+		if(L.weather_blindness_amount <= (STORM_MAXIMUM_BLINDNESS - storm_blindness_per_tick))
+			L.weather_blindness_amount += storm_blindness_per_tick
+			L.adjust_blurriness(storm_blindness_per_tick)
+		else
+			L.adjust_blurriness(STORM_MAXIMUM_BLINDNESS - L.weather_blindness_amount)
+			L.weather_blindness_amount = STORM_MAXIMUM_BLINDNESS
 
