@@ -80,7 +80,7 @@
 
 /datum/preference/choiced/ghost_form/create_default_value()
 	return "ghost"
-
+/*
 /datum/preference/choiced/ghost_form/apply_to_client(client/client, value)
 	var/mob/dead/observer/ghost = client.mob
 	if (!istype(ghost))
@@ -97,13 +97,14 @@
 	data[CHOICED_PREFERENCE_DISPLAY_NAMES] = ghost_forms
 
 	return data
-
+*/
 /// Toggles the HUD for ghosts
+/*
 /datum/preference/toggle/ghost_hud
 	savefile_key = "ghost_hud"
 	savefile_identifier = PREFERENCE_PLAYER
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
-
+*/
 /datum/preference/toggle/ghost_hud/apply_to_client(client/client, value)
 	if (isobserver(client?.mob))
 		client?.mob.hud_used?.show_hud()
@@ -170,9 +171,10 @@
 				input = GHOST_OTHERS_THEIR_SETTING
 
 	return ..(input, preferences)
-
+/*
 /// Whether or not ghosts can examine things by clicking on them.
 /datum/preference/toggle/inquisitive_ghost
 	savefile_key = "inquisitive_ghost"
 	savefile_identifier = PREFERENCE_PLAYER
 	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+*/
