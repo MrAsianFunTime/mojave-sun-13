@@ -1,6 +1,3 @@
-//Vrell - due to implementation concerns with the wipe emote, this is a global define.
-#define STORM_MAXIMUM_BLINDNESS 100
-
 /mob/living
 	var/weather_blindness_amount = 0
 
