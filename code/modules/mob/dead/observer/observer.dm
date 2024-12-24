@@ -182,8 +182,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	updateallghostimages()
 
-	QDEL_NULL(spawners_menu)
-	QDEL_NULL(minigames_menu)
+/*	QDEL_NULL(spawners_menu)
+	QDEL_NULL(minigames_menu) */
 	return ..()
 
 // MOJAVE SUN EDIT BEGIN
