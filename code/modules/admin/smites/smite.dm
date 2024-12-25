@@ -14,4 +14,5 @@
 /// The effect of the smite, make sure to call this in your own smites
 /datum/smite/proc/effect(client/user, mob/living/target)
 	if (should_log)
+
 		user.punish_log(target, name)

@@ -65,6 +65,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/datum/spawners_menu/spawners_menu
 	var/datum/minigames_menu/minigames_menu
 
+/mob/dead/observer/Initialize(mapload) //RM Edit to corpse lock ghosts. -Blutz
+	 ADD_TRAIT(src, TRAIT_CORPSELOCKED, SPECIES_TRAIT)
+
 /mob/dead/observer/Initialize(mapload)
 	set_invisibility(GLOB.observer_default_invisibility)
 
@@ -150,9 +153,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	. = ..()
 
-	grant_all_languages()
-	show_data_huds()
-	data_huds_on = 1
+//	grant_all_languages()
+//	show_data_huds()
+	data_huds_on = 0
 
 	SSpoints_of_interest.make_point_of_interest(src)
 
@@ -181,9 +184,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	QDEL_NULL(ghostimage_simple)
 
 	updateallghostimages()
-
-/*	QDEL_NULL(spawners_menu)
-	QDEL_NULL(minigames_menu) */
+	
 	return ..()
 
 // MOJAVE SUN EDIT BEGIN

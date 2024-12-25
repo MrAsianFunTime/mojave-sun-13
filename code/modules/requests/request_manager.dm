@@ -167,7 +167,7 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 				return TRUE
 			show_individual_logging_panel(M, null, null)
 			return TRUE
-		if ("smite")
+/*		if ("smite")
 			if(!check_rights(R_FUN))
 				to_chat(usr, "Insufficient permissions to smite, you require +FUN", confidential = TRUE)
 				return TRUE
@@ -176,7 +176,7 @@ GLOBAL_DATUM_INIT(requests, /datum/request_manager, new)
 				to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human", confidential = TRUE)
 				return TRUE
 			usr.client.smite(H)
-			return TRUE
+			return TRUE */
 		if ("rply")
 			if (request.req_type == REQUEST_PRAYER)
 				to_chat(usr, "Cannot reply to a prayer", confidential = TRUE)
