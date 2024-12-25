@@ -123,9 +123,9 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	balloon_alert(user, "unpacking bible...")
 	if(!do_after(user, 15 SECONDS, new_altar_area))
 		return
-	new /obj/structure/altar_of_gods(new_altar_area)
-	qdel(src)
-
+	/*new /obj/structure/altar_of_gods(new_altar_area)
+	qdel(src)*/
+/*
 /obj/item/storage/book/bible/proc/bless(mob/living/L, mob/living/user)
 	if(GLOB.religious_sect)
 		return GLOB.religious_sect.sect_bless(L,user)
@@ -151,7 +151,8 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 		playsound(src.loc, "punch", 25, TRUE, -1)
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
 	return TRUE
-
+*/
+/*
 /obj/item/storage/book/bible/attack(mob/living/M, mob/living/carbon/human/user, heal_mode = TRUE)
 
 	if (!ISADVANCEDTOOLUSER(user))
@@ -196,7 +197,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 				span_userdanger("[user] beats [M] over the head with [src]!"))
 		playsound(src.loc, "punch", 25, TRUE, -1)
 		log_combat(user, M, "attacked", src)
-
+*/
 /obj/item/storage/book/bible/afterattack(atom/bible_smacked, mob/user, proximity)
 	. = ..()
 	if(!proximity)

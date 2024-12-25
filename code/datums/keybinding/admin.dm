@@ -53,14 +53,14 @@
 	full_name = "Toggle Buildmode Self"
 	description = "Toggles buildmode"
 	keybind_signal = COMSIG_KB_ADMIN_TOGGLEBUILDMODE_DOWN
-
+/*
 /datum/keybinding/admin/toggle_buildmode_self/down(client/user)
 	. = ..()
 	if(.)
 		return
 	user.togglebuildmodeself()
 	return TRUE
-
+*/
 /datum/keybinding/admin/stealthmode
 	hotkey_keys = list("CtrlF8")
 	name = "stealth_mode"

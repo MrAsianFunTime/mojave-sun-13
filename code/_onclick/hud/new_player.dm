@@ -239,6 +239,7 @@
 	icon = 'icons/hud/lobby/bottom_buttons.dmi'
 	icon_state = "settings"
 	base_icon_state = "settings"
+	enabled = TRUE
 	screen_loc = "TOP:-122,CENTER:+30"
 
 /atom/movable/screen/lobby/button/settings/Click(location, control, params)
@@ -255,6 +256,7 @@
 	icon = 'icons/hud/lobby/bottom_buttons.dmi'
 	icon_state = "changelog"
 	base_icon_state = "changelog"
+	enabled = TRUE
 	screen_loc ="TOP:-122,CENTER:+58"
 
 
@@ -262,6 +264,7 @@
 	icon = 'icons/hud/lobby/bottom_buttons.dmi'
 	icon_state = "crew_manifest"
 	base_icon_state = "crew_manifest"
+	enabled = TRUE
 	screen_loc = "TOP:-122,CENTER:+2"
 
 /atom/movable/screen/lobby/button/crew_manifest/Click(location, control, params)
@@ -279,6 +282,7 @@
 	icon = 'icons/hud/lobby/bottom_buttons.dmi'
 	icon_state = "poll"
 	base_icon_state = "poll"
+	enabled = TRUE
 	screen_loc = "TOP:-122,CENTER:-26"
 
 	var/new_poll = FALSE

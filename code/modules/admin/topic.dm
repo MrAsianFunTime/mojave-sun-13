@@ -977,8 +977,8 @@
 			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human", confidential = TRUE)
 			return
 
-		usr.client.smite(H)
-
+	//	usr.client.smite(H)
+	//Don't ask me why this fixes the error. -Blutz.
 	else if(href_list["CentComReply"])
 		if(!check_rights(R_ADMIN))
 			return
