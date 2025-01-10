@@ -958,6 +958,13 @@
 	},
 /turf/open/floor/ms13/tile/large/black,
 /area/ms13/town)
+"bbl" = (
+/obj/machinery/ms13/terminal/rusty{
+	pixel_x = -16;
+	dir = 1
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "bbm" = (
 /obj/structure/lattice/catwalk/ms13,
 /obj/structure/ms13/trash/papers{
@@ -1543,6 +1550,10 @@
 "bMZ" = (
 /turf/open/floor/plating/ms13/roof,
 /area/ms13/desert)
+"bNg" = (
+/obj/machinery/door/unpowered/ms13/metal/red,
+/turf/open/floor/ms13/tile/navy,
+/area/ms13/desert)
 "bNn" = (
 /obj/machinery/door/unpowered/ms13/seethrough/fence/wire,
 /turf/open/floor/plating/ms13/ground/road,
@@ -1815,6 +1826,10 @@
 "cdI" = (
 /obj/structure/ms13/fence/vertical/wire/east/barb,
 /turf/open/floor/plating/ms13/ground/desert,
+/area/ms13/desert)
+"cdX" = (
+/obj/structure/ms13/toilet,
+/turf/open/floor/ms13/tile/brown,
 /area/ms13/desert)
 "ceQ" = (
 /obj/structure/table/ms13/no_smooth/counter/wood,
@@ -2466,6 +2481,12 @@
 /obj/structure/table/ms13/low_wall/scrap/white,
 /turf/open/floor/plating/ms13/ground/desert,
 /area/ms13/water_baron/interior)
+"cRB" = (
+/obj/structure/table/ms13/no_smooth/large/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "cRJ" = (
 /obj/machinery/door/unpowered/ms13/metal/red,
 /turf/open/floor/plating/ms13/ground/desert,
@@ -5203,6 +5224,13 @@
 "grr" = (
 /turf/open/floor/ms13/tile/full/black,
 /area/ms13/ncr/building)
+"grZ" = (
+/obj/structure/ms13/toilet,
+/obj/machinery/light/ms13/broken{
+	dir = 1
+	},
+/turf/open/floor/ms13/tile/brown,
+/area/ms13/desert)
 "gso" = (
 /obj/structure/chair/ms13/wood/padded{
 	dir = 4
@@ -7018,6 +7046,12 @@
 	},
 /turf/open/floor/ms13/concrete/bricks,
 /area/ms13/town)
+"iUq" = (
+/obj/structure/table/ms13/no_smooth/large/wood/desk{
+	dir = 1
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "iWf" = (
 /obj/structure/chair/ms13/wood/padded{
 	dir = 8
@@ -8214,6 +8248,12 @@
 "kvQ" = (
 /turf/closed/wall/ms13/scrap/blue,
 /area/ms13/desert)
+"kvR" = (
+/obj/structure/chair/office/ms13/red/broken{
+	pixel_x = 15
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "kvS" = (
 /obj/structure/chair/office,
 /turf/open/floor/ms13/tile/large/green,
@@ -8926,6 +8966,13 @@
 	},
 /turf/open/floor/plating/ms13/ground/sidewalk,
 /area/ms13/water_baron)
+"lnK" = (
+/obj/machinery/ms13/terminal/rusty{
+	pixel_y = 7;
+	pixel_x = -16
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "loj" = (
 /obj/structure/ms13/trash/bricks{
 	dir = 4
@@ -10906,6 +10953,10 @@
 	},
 /turf/open/ms13/water/sewer/shallow,
 /area/ms13/town)
+"nVG" = (
+/obj/structure/table/ms13/no_smooth/large/wood/desk,
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "nWF" = (
 /obj/machinery/oven,
 /turf/open/floor/ms13/tile/large/cafeteria,
@@ -11272,6 +11323,10 @@
 /obj/structure/lattice/catwalk/ms13,
 /turf/open/openspace/ms13,
 /area/ms13/town)
+"oxn" = (
+/obj/machinery/door/unpowered/ms13/metal/red,
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "oxr" = (
 /obj/structure/railing/ms13/wood{
 	dir = 4
@@ -11970,6 +12025,13 @@
 	},
 /turf/open/floor/plating/ms13/ground/desertalt,
 /area/ms13/water_baron)
+"psE" = (
+/obj/structure/chair/office/ms13/red/broken{
+	dir = 1;
+	pixel_x = 15
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/desert)
 "psK" = (
 /obj/structure/table/ms13/metal/grate,
 /obj/effect/spawner/random/ms13/guaranteed/crafting/lowrandom,
@@ -12035,6 +12097,12 @@
 /obj/effect/landmark/start/ms13/deadwater_sheriff,
 /turf/open/floor/wood/ms13/wide,
 /area/ms13/water_baron/interior)
+"pxd" = (
+/obj/structure/ms13/storage/large/shelf/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/ms13/common,
+/area/ms13/ncr/building)
 "pxo" = (
 /obj/structure/table/ms13/low_wall/brick/alt,
 /turf/open/floor/plating/ms13/ground/mountain/drought,
@@ -13393,6 +13461,10 @@
 	},
 /turf/open/floor/ms13/concrete/small,
 /area/ms13/town)
+"rcn" = (
+/obj/structure/closet/ms13/metal,
+/turf/open/floor/ms13/tile/navy,
+/area/ms13/desert)
 "rcG" = (
 /obj/structure/bed/ms13/bedframe/wood,
 /obj/structure/bed/ms13/mattress/old,
@@ -13570,6 +13642,13 @@
 	dir = 8
 	},
 /turf/open/floor/ms13/tile/large/checkered,
+/area/ms13/desert)
+"rlp" = (
+/obj/machinery/shower/ms13{
+	dir = 4
+	},
+/obj/effect/turf_decal/ms13/showerdrains/small,
+/turf/open/floor/ms13/tile/brown,
 /area/ms13/desert)
 "rlw" = (
 /obj/structure/table/ms13/no_smooth/counter/wood/bend{
@@ -14262,6 +14341,13 @@
 	},
 /turf/open/floor/wood/ms13/wide,
 /area/ms13/water_baron/interior)
+"seA" = (
+/obj/structure/mirror/ms13{
+	pixel_y = 35
+	},
+/obj/structure/sink/ms13/vile,
+/turf/open/floor/ms13/tile/brown,
+/area/ms13/desert)
 "seC" = (
 /obj/structure/ms13/storage/trashcan,
 /obj/structure/railing/ms13/solo{
@@ -14891,6 +14977,10 @@
 "sPZ" = (
 /turf/open/floor/plating/ms13/ground/snow,
 /area/ms13/snow/deepforest)
+"sQt" = (
+/obj/machinery/door/unpowered/ms13/metal/red,
+/turf/open/floor/ms13/tile/brown,
+/area/ms13/desert)
 "sQE" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -18114,6 +18204,9 @@
 "wTN" = (
 /turf/closed/wall/ms13/brick/alt,
 /area/ms13/underground/underground_town)
+"wUy" = (
+/turf/open/floor/ms13/tile/brown,
+/area/ms13/desert)
 "wUC" = (
 /obj/structure/ms13/trash/papers{
 	dir = 1;
@@ -407334,12 +407427,12 @@ xzQ
 xzQ
 xzQ
 fty
-xzQ
-xzQ
-xzQ
-xzQ
-xzQ
-xzQ
+mDW
+mDW
+mDW
+mDW
+mDW
+mDW
 lTE
 ogn
 pqv
@@ -407686,12 +407779,12 @@ xzQ
 xzQ
 xzQ
 fty
-xzQ
-xzQ
-xzQ
-xzQ
-xzQ
-xzQ
+mDW
+mDW
+mDW
+mDW
+mDW
+mDW
 lTE
 kci
 qVZ
@@ -408037,13 +408130,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
-xzQ
-uJV
 xzQ
 xzQ
-uJV
 xzQ
+mDW
+mDW
+mDW
+mDW
 lTE
 qVZ
 qVZ
@@ -408389,13 +408482,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
-xzQ
-xzQ
+mDW
+mDW
+mDW
 qfL
 qVZ
 qVZ
@@ -408741,13 +408834,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
-xzQ
-rEs
 xzQ
 xzQ
 xzQ
 xzQ
+mDW
+mDW
+mDW
 lTE
 qVZ
 qVZ
@@ -409093,13 +409186,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
-xzQ
-rEs
-rEs
-uJV
 xzQ
 xzQ
+xzQ
+xzQ
+xzQ
+mDW
+mDW
 lTE
 qVZ
 qVZ
@@ -409445,20 +409538,20 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
-xzQ
+mDW
+mDW
 lTE
 qVZ
+pxd
 qVZ
+pxd
 qVZ
-qVZ
-qVZ
-qVZ
+pxd
 lTE
 xzQ
 xzQ
@@ -409797,10 +409890,10 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
-fty
-fty
-fty
+xzQ
+xzQ
+xzQ
+xzQ
 fty
 fty
 fty
@@ -410149,19 +410242,19 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
-xzQ
+mDW
+mDW
 lTE
 qVZ
+pxd
 qVZ
 qVZ
-qVZ
-qVZ
+pxd
 qVZ
 lTE
 xzQ
@@ -410501,13 +410594,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
+mDW
 lTE
 qVZ
 qVZ
@@ -410853,13 +410946,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
+mDW
 eyo
 qVZ
 qVZ
@@ -411205,13 +411298,13 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
+mDW
 lTE
 qVZ
 qVZ
@@ -411557,19 +411650,19 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
 xzQ
+mDW
 lTE
 qVZ
+pxd
 qVZ
 qVZ
-qVZ
-qVZ
+pxd
 qVZ
 lTE
 xzQ
@@ -411909,11 +412002,11 @@ xzQ
 xzQ
 xzQ
 xzQ
-fty
-fty
-fty
-fty
-fty
+xzQ
+xzQ
+xzQ
+xzQ
+xzQ
 fty
 fty
 lTE
@@ -412271,9 +412364,9 @@ xzQ
 xzQ
 xzQ
 lTE
+hJs
 qVZ
-qVZ
-qVZ
+hJs
 qVZ
 lTE
 xzQ
@@ -413327,9 +413420,9 @@ xzQ
 xzQ
 xzQ
 lTE
+hJs
 qVZ
-qVZ
-qVZ
+hJs
 qVZ
 lTE
 xzQ
@@ -507092,9 +507185,9 @@ iKL
 iKL
 iKL
 rCw
-mDW
-mDW
-mDW
+seA
+wUy
+rlp
 rCw
 mDW
 mDW
@@ -507444,14 +507537,14 @@ iKL
 iKL
 iKL
 rCw
+grZ
+wUy
+wUy
+sQt
 mDW
 mDW
 mDW
-mDW
-mDW
-mDW
-mDW
-mDW
+cRB
 mDW
 rCw
 iKL
@@ -507796,9 +507889,9 @@ iKL
 iKL
 iKL
 rCw
-mDW
-mDW
-mDW
+cdX
+wUy
+wUy
 rCw
 mDW
 mDW
@@ -508500,9 +508593,9 @@ iKL
 iKL
 iKL
 rCw
-mDW
-mDW
-mDW
+rcn
+vgu
+vgu
 rCw
 mDW
 mDW
@@ -508852,10 +508945,10 @@ iKL
 iKL
 iKL
 rCw
-mDW
-mDW
-mDW
-mDW
+rcn
+vgu
+vgu
+bNg
 mDW
 mDW
 rCw
@@ -509204,9 +509297,9 @@ iKL
 iKL
 iKL
 rCw
-mDW
-mDW
-mDW
+rcn
+vgu
+vgu
 rCw
 mDW
 mDW
@@ -509556,9 +509649,9 @@ iKL
 iKL
 iKL
 rCw
-mDW
-mDW
-mDW
+rcn
+vgu
+vgu
 rCw
 mDW
 mDW
@@ -510612,15 +510705,15 @@ iKL
 iKL
 iKL
 rCw
+kvR
+iUq
 mDW
+oxn
 mDW
+oxn
 mDW
-mDW
-mDW
-mDW
-mDW
-mDW
-mDW
+nVG
+psE
 rCw
 iKL
 iKL
@@ -510965,13 +511058,13 @@ iKL
 iKL
 rCw
 mDW
-mDW
-mDW
-rCw
+bbl
 mDW
 rCw
 mDW
+rCw
 mDW
+lnK
 mDW
 rCw
 iKL
