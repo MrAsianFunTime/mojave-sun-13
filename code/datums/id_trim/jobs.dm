@@ -165,7 +165,7 @@
 	minimal_access = list(ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_MORGUE, ACCESS_THEATRE, ACCESS_SERVICE)
 	config_job = "chaplain"
 	template_access = list(ACCESS_CAPTAIN, ACCESS_HOP, ACCESS_CHANGE_IDS)
-//	job = /datum/job/chaplain
+	job = /datum/job/chaplain
 
 /datum/id_trim/job/chemist
 	assignment = "Chemist"

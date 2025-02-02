@@ -10,4 +10,3 @@ saltspider = Trial Moderator
 elianore = Head Admin
 OfficialN30 = Co-Host
 ConstantineIII = Admin
-SocialnyStrezmy = Co-Host

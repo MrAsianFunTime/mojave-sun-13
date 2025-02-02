@@ -69,7 +69,7 @@
 		/datum/job/quartermaster,
 		/datum/job/shaft_miner,
 		// Service
-//		/datum/job/chaplain,
+		/datum/job/chaplain,
 		/datum/job/bartender,
 		/datum/job/cook,
 		/datum/job/curator,

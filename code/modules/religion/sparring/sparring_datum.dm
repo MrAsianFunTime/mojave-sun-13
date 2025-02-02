@@ -209,9 +209,9 @@
 			if(PUNISHMENT_OMEN)
 				to_chat(interfering, span_warning("You get a bad feeling... for interfering with [chaplain]'s sparring match..."))
 				interfering.AddComponent(/datum/component/omen, TRUE, null, FALSE)
-/*			if(PUNISHMENT_LIGHTNING)
+			if(PUNISHMENT_LIGHTNING)
 				to_chat(interfering, span_warning("[GLOB.deity] has punished you for interfering with [chaplain]'s sparring match!"))
-				lightningbolt(interfering)*/
+				lightningbolt(interfering)
 			if(PUNISHMENT_BRAND)
 				var/mob/living/carbon/human/branded = interfering
 				to_chat(interfering, span_warning("[GLOB.deity] brands your flesh for interfering with [chaplain]'s sparring match!!"))
