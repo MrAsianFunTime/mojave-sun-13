@@ -1,7 +1,7 @@
 /datum/job/ms13/legion/veterandecanus
 	title = "Legion Veteran Decanus"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Will of Caesar."
 	description = "Further the Legion's goals in the region and keep the Drylander tribe in check and on the path to assimilation."
 

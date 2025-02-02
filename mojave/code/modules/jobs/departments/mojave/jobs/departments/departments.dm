@@ -41,7 +41,7 @@
 	//label_class = "NCR"
 	//latejoin_color = "#ffddf0"
 */
-/*
+
 /datum/job_department/legion
 	department_name = DEPARTMENT_LEGION
 	department_bitflags = DEPARTMENT_BITFLAG_LEGION
@@ -51,7 +51,7 @@
  	//display_order = 0
  	//label_class = "Legion"
  	//latejoin_color = "#ffddf0"
-*/
+
 
 /// Depreciated. Not even human.
 //datum/job_department/rangers
@@ -113,7 +113,7 @@
 	//latejoin_color = "#ffddf0"
 */
 
-/*
+
 /datum/job_department/drylander
 	department_name = DEPARTMENT_DRYLANDER
 	department_bitflags = DEPARTMENT_BITFLAG_DRYLANDER
@@ -123,7 +123,7 @@
 	//display_order = 0
 	//label_class = "TOWN"
 	//latejoin_color = "#ffddf0"
-*/
+
 
 /datum/job_department/goldman
 	department_name = DEPARTMENT_GOLDMAN

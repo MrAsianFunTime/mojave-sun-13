@@ -36,6 +36,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/list/randomise = list()
 
+	//character inspect preferences
+	var/headshot_link
+
 	//Quirk list
 	var/list/all_quirks = list()
 

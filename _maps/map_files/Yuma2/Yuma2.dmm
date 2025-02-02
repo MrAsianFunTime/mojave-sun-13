@@ -1103,6 +1103,9 @@
 /obj/structure/table/ms13/no_smooth/large/metal/desk{
 	dir = 8
 	},
+/obj/machinery/ms13/terminal{
+	dir = 8
+	},
 /turf/open/floor/wood/ms13/wide,
 /area/ms13/ncr/building)
 "bdl" = (
@@ -8079,8 +8082,10 @@
 /turf/open/floor/ms13/tile,
 /area/ms13/water_baron/interior)
 "jvY" = (
-/obj/effect/landmark/start/ms13/mp_sergeant,
-/turf/open/floor/wood/ms13/common,
+/obj/structure/chair/ms13/metal/folding{
+	pixel_x = 15
+	},
+/turf/open/floor/wood/ms13/wide,
 /area/ms13/ncr/building)
 "jwI" = (
 /obj/effect/turf_decal/loading_area/red,
@@ -8344,6 +8349,13 @@
 	},
 /turf/open/floor/ms13/concrete/small,
 /area/ms13/underground/underground_town)
+"jMM" = (
+/obj/structure/ms13/storage/large/shelf/wood{
+	dir = 4
+	},
+/obj/effect/spawner/random/ms13/medical/medkit,
+/turf/open/floor/wood/ms13/common,
+/area/ms13/ncr/building)
 "jNc" = (
 /obj/structure/table/ms13/no_smooth/counter/metal{
 	pixel_x = 6;
@@ -10792,6 +10804,13 @@
 /obj/structure/table/ms13/no_smooth/large/metal/desk{
 	dir = 1
 	},
+/obj/machinery/ms13/terminal{
+	dir = 1;
+	remote_capability = 1;
+	signal_id_1 = "overseer-office";
+	signal_title_1 = "Viewport Shutters";
+	pixel_x = 17
+	},
 /turf/open/floor/wood/ms13/wide,
 /area/ms13/ncr/building)
 "mGD" = (
@@ -11154,8 +11173,11 @@
 /turf/open/floor/ms13/tile/large/green,
 /area/ms13/town)
 "nbF" = (
-/obj/effect/landmark/start/ms13/medic,
-/turf/open/floor/wood/ms13/common,
+/obj/structure/chair/ms13/metal/folding{
+	dir = 4;
+	pixel_y = 19
+	},
+/turf/open/floor/wood/ms13/wide,
 /area/ms13/ncr/building)
 "ncq" = (
 /obj/structure/table/ms13/wood,
@@ -14228,10 +14250,8 @@
 /turf/open/ms13/water/sewer/deep,
 /area/ms13/town)
 "qHu" = (
-/obj/structure/bed/ms13/bedframe/wire,
-/obj/structure/bed/ms13/mattress/old,
-/obj/effect/landmark/start/ms13/milpolice,
-/turf/open/floor/wood/ms13/common,
+/obj/machinery/door/unpowered/ms13/metal,
+/turf/open/floor/wood/ms13/wide,
 /area/ms13/ncr/building)
 "qHH" = (
 /obj/structure/table/ms13/low_wall/siding,
@@ -389372,7 +389392,7 @@ xzQ
 rVz
 nQY
 nQY
-nQY
+nbF
 nQY
 rVz
 xzQ
@@ -390086,10 +390106,10 @@ xzQ
 rVz
 nQY
 nQY
+qHu
 nQY
 nQY
-nQY
-nQY
+qHu
 nQY
 nQY
 rVz
@@ -390771,9 +390791,9 @@ xzQ
 xzQ
 fbX
 rVz
-nQY
+jvY
 mGC
-nQY
+jvY
 mGC
 nQY
 nQY
@@ -391142,10 +391162,10 @@ xzQ
 rVz
 nQY
 nQY
+qHu
 nQY
 nQY
-nQY
-nQY
+qHu
 nQY
 nQY
 rVz
@@ -391482,7 +391502,7 @@ nQY
 nQY
 nQY
 nQY
-nQY
+nbF
 nQY
 nQY
 nQY
@@ -391827,9 +391847,9 @@ xzQ
 xzQ
 fbX
 rVz
-nQY
+jvY
 mGC
-nQY
+jvY
 mGC
 nQY
 nQY
@@ -391846,7 +391866,7 @@ idN
 rVz
 nQY
 nQY
-nQY
+qHu
 nQY
 nQY
 rVz
@@ -392553,7 +392573,7 @@ nQY
 rVz
 nQY
 nQY
-nQY
+qHu
 nQY
 nQY
 rVz
@@ -407703,7 +407723,7 @@ xzQ
 qfL
 qVZ
 qVZ
-nbF
+qVZ
 qVZ
 qVZ
 lTE
@@ -409106,11 +409126,11 @@ dFW
 dFW
 dFW
 lTE
-qHu
+ehU
 qVZ
 ehU
 qVZ
-qHu
+ehU
 lTE
 xzQ
 xzQ
@@ -410516,7 +410536,7 @@ xzQ
 lTE
 ehU
 qVZ
-qHu
+ehU
 qVZ
 ehU
 lTE
@@ -411211,7 +411231,7 @@ aPg
 qVZ
 aPg
 qVZ
-aPg
+jMM
 lTE
 xzQ
 xzQ
@@ -414740,7 +414760,7 @@ xzQ
 eyo
 qVZ
 qVZ
-jvY
+qVZ
 qVZ
 qVZ
 lTE

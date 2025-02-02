@@ -1,7 +1,7 @@
 /datum/job/ms13/legion/vexillarius
 	title = "Legion Vexillarius"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Centurion and the Veteran Decanus"
 	description = "Assist the higher ranks in any way possible, deliver messages on their behalf. Rally the troops in battle."
 

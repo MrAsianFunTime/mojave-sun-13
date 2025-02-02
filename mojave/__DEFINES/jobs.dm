@@ -1,6 +1,6 @@
 #define MS13_WASTELAND		(1<<0)
 
-#define MS13_WASTELANDER		(1<<0)
+#define MS13_WASTELANDER	    (1<<0)
 #define MS13_CANAANITE		(1<<1)
 #define MS13_HUBOLOGIST		(1<<2)
 
@@ -74,6 +74,25 @@
 #define MS13_MISSIONARY              (1<<3)
 
 #define MS13_RANCH             (1<<8)
+
+#define MS13_BRAHMINBARON     (1<<0)       
+#define MS13_BRAHMINFAMILY     (1<<1) 
+#define MS13_FARMHAND     (1<<2)
+
+#define MS13_LEGION            (1<<9)
+
+#define MS13_VETERANDECANUS     (1<<0)
+#define MS13_VEXILLARIUS     (1<<1)
+#define MS13_EXPLORER     (1<<2)
+#define MS13_SCOUT     (1<<3)
+
+#define MS13_DRYLANDER          (1<<10)
+
+#define MS13_CHIEFTAIN     (1<<0)
+#define MS13_SHAMAN     (1<<1)
+#define MS13_HEADTAKER     (1<<2)
+#define MS13_HUNTER     (1<<3)
+#define MS13_DRYFOLK     (1<<4)
 
 #define JOB_DISPLAY_ORDER_MS13_WASTELANDER 1
 #define JOB_DISPLAY_ORDER_MS13_NOMAD 2

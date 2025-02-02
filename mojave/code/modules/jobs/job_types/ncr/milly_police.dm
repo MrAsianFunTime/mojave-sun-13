@@ -1,7 +1,7 @@
 /datum/job/ms13/ncr/mp
 	title = "NCR Military Police"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "The Sergeant"
 	description = "Follow and execute orders given to you by the Sergeant. Ensure the safety and law and order of the town of Snowcrest."
 

@@ -562,8 +562,8 @@
 	if(!CheckEquippedClothing(user) || get_dist(user, src) > 1 || link_to)
 		return FALSE
 /*	if(user.fatness == FATNESS_OBESE) //Can be deleted. -Blutz
-		to_chat(user, span_warning("Your fat ass is too huge to fit in.")) */
-		return FALSE
+		to_chat(user, span_warning("Your fat ass is too huge to fit in.")) 
+		return FALSE */
 	to_chat(user, "You begin entering the [src].")
 	if(do_after(user, 8 SECONDS, user) && CheckEquippedClothing(user) && density)
 		GetInside(user)
