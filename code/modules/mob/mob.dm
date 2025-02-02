@@ -1209,7 +1209,7 @@
 		if(!check_rights(R_ADMIN))
 			return
 		usr.client.cmd_admin_godmode(src)
-/*	if(href_list[VV_HK_GIVE_SPELL])
+	if(href_list[VV_HK_GIVE_SPELL])
 		if(!check_rights(NONE))
 			return
 		usr.client.give_spell(src)
@@ -1224,7 +1224,7 @@
 	if(href_list[VV_HK_GIB])
 		if(!check_rights(R_FUN))
 			return
-		usr.client.cmd_admin_gib(src) */
+		usr.client.cmd_admin_gib(src)
 	if(href_list[VV_HK_BUILDMODE])
 		if(!check_rights(R_BUILD))
 			return

@@ -1,15 +1,3 @@
-//Rad Meridian 2024 - 2025
-//Without exception, this is some of my sloppiest work because what i'm working on is so entangled in base TG code.
-//The goal originally was to limit Admin options for verbs, in absence of a unified file of toggles i've had to resort to
-//spaghetti edits. I started by removing /fun/ verbs and anything that is unnecessary or abusable on an RP themed server. 
-//Smites came second. We don't need staff turning players into bread, period. This inevitably led me down the rabbit hole.
-//It would have been simpler to change permissions for staff but we would still have unused TG verbs leftover.
-//-Blutz.
-// |
-// This is a non finalized version of admin_verbs.dm.
-// I do not plan on cleaning this up until we are finalized with our changes.
-
-//Original Comment
 //admin verb groups - They can overlap if you so wish. Only one of each verb will exist in the verbs list regardless
 //the procs are cause you can't put the comments in the GLOB var define
 GLOBAL_LIST_INIT(admin_verbs_default, world.AVerbsDefault())
@@ -21,8 +9,8 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/hide_verbs, /*hides all our adminverbs*/
 	/client/proc/debug_variables, /*allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify*/
 	/client/proc/dsay, /*talk in deadchat using our ckey/fakekey*/
-//	/client/proc/investigate_show, /*various admintools for investigation. Such as a singulo grief-log*/
-	/*/client/proc/secrets,*/ //Not Used. -Blutz 12/24
+	/client/proc/investigate_show, /*various admintools for investigation. Such as a singulo grief-log*/
+	/client/proc/secrets,
 	/client/proc/reload_admins,
 	/client/proc/reestablish_db_connection, /*reattempt a connection to the database*/
 	/client/proc/cmd_admin_pm_context, /*right-click adminPM interface*/
@@ -31,7 +19,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/mark_datum_mapview,
 	/client/proc/tag_datum_mapview,
 	/client/proc/debugstatpanel,
-//	/client/proc/fix_air, /*resets air in designated radius to its default atmos composition*/
+	/client/proc/fix_air, /*resets air in designated radius to its default atmos composition*/
 	/client/proc/requests
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
@@ -39,100 +27,93 @@ GLOBAL_PROTECT(admin_verbs_admin)
 /world/proc/AVerbsAdmin()
 	return list(
 	/client/proc/invisimin, /*allows our mob to go invisible/visible*/
-//	/datum/admins/proc/show_traitor_panel, //interface which shows a mob's mind -Removed due to rare practical use. Moved to debug verbs ~Errorage
-//	/datum/admins/proc/show_lag_switch_panel,
+// /datum/admins/proc/show_traitor_panel, /*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
+	/datum/admins/proc/show_lag_switch_panel,
 	/datum/admins/proc/show_player_panel, /*shows an interface for individual players, with various links (links require additional flags*/
 	/datum/verbs/menu/Admin/verb/playerpanel,
 	/client/proc/game_panel, /*game panel, allows to change game-mode etc*/
-//	/client/proc/check_ai_laws,*/ //shows AI and borg laws, RM Does not utilize this. -Blutz.
-//	/client/proc/ghost_pool_protection, /*opens a menu for toggling ghost roles*/
-//	/client/proc/run_weather, Only Need One of these
-	/client/proc/run_particle_weather,
-//RM - Notation for follow up - Blutz.
+	/client/proc/check_ai_laws, /*shows AI and borg laws*/
+	/client/proc/ghost_pool_protection, /*opens a menu for toggling ghost roles*/
 	/datum/admins/proc/toggleooc, /*toggles ooc on/off for everyone*/
 	/datum/admins/proc/toggleoocdead, /*toggles ooc on/off for everyone who is dead*/
 	/datum/admins/proc/toggleenter, /*toggles whether people can join the current game*/
 	/datum/admins/proc/toggleguests, /*toggles whether guests can join the current game*/
 	/datum/admins/proc/announce, /*priority announce something to all clients.*/
 	/datum/admins/proc/set_admin_notice, /*announcement all clients see when joining the server.*/
-	/client/proc/run_weather,
-	/client/proc/run_particle_weather,
-//End of Notation.
-//	/client/proc/admin_ghost, /*allows us to ghost/reenter body at will*/
+	/client/proc/admin_ghost, /*allows us to ghost/reenter body at will*/
 	/client/proc/toggle_view_range, /*changes how far we can see*/
 	/client/proc/getserverlogs, /*for accessing server logs*/
 	/client/proc/getcurrentlogs, /*for accessing server logs for the current round*/
-//	/client/proc/cmd_admin_subtle_message, //send a message to somebody as a 'voice in their head', RM does not utilize this. -Blutz.
-//	/client/proc/cmd_admin_headset_message, /*send a message to somebody through their headset as CentCom*/
+	/client/proc/cmd_admin_subtle_message, /*send a message to somebody as a 'voice in their head'*/
+	/client/proc/cmd_admin_headset_message, /*send a message to somebody through their headset as CentCom*/
 	/client/proc/cmd_admin_delete, /*delete an instance/object/mob/etc*/
 	/client/proc/cmd_admin_check_contents, /*displays the contents of an instance*/
-//These are non utilized verbs. -Blutz.
-//	/client/proc/centcom_podlauncher, Open a window to launch a Supplypod and configure it or it's contents
-//	/client/proc/check_antagonists, shows all antags
-//	/datum/admins/proc/access_news_network, allows access of newscasters
-//	/client/proc/jumptocoord, we ghost and jump to a coordinate
-//	/client/proc/Getmob, teleports a mob to our location
-//	/client/proc/Getkey, teleports a mob with a certain ckey to our location
-// /client/proc/sendmob, sends a mob somewhere -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage
+	/client/proc/centcom_podlauncher,/*Open a window to launch a Supplypod and configure it or it's contents*/
+	/client/proc/check_antagonists, /*shows all antags*/
+	/datum/admins/proc/access_news_network, /*allows access of newscasters*/
+	/client/proc/jumptocoord, /*we ghost and jump to a coordinate*/
+	/client/proc/Getmob, /*teleports a mob to our location*/
+	/client/proc/Getkey, /*teleports a mob with a certain ckey to our location*/
+// /client/proc/sendmob, /*sends a mob somewhere*/ -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage
 	/client/proc/jumptoarea,
-	/client/proc/jumptokey, //allows us to jump to the location of a mob with a certain ckey
-	/client/proc/jumptomob, //allows us to jump to a specific mob
-	/client/proc/jumptoturf, //allows us to jump to a specific turf
-//	/client/proc/admin_call_shuttle, /*allows us to call the emergency shuttle*/
-//	/client/proc/admin_cancel_shuttle, /*allows us to cancel the emergency shuttle, sending it back to centcom*/
-//	/client/proc/admin_disable_shuttle, /*allows us to disable the emergency shuttle admin-wise so that it cannot be called*/
-//	/client/proc/admin_enable_shuttle,  /*undoes the above*/
-//	/client/proc/cmd_admin_direct_narrate, /*send text directly to a player with no padding. Useful for narratives and fluff-text*/
-//	/client/proc/cmd_admin_world_narrate, /*sends text to all players with no padding*/
-//	/client/proc/cmd_admin_local_narrate, /*sends text to all mobs within view of atom*/
-//	/client/proc/cmd_admin_create_centcom_report,
-//	/client/proc/cmd_change_command_name,
-//	/client/proc/cmd_admin_check_player_exp, /* shows players by playtime */
-//	/client/proc/toggle_combo_hud, // toggle display of the combination pizza antag and taco sci/med/eng hud
-//	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
-//	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
+	/client/proc/jumptokey, /*allows us to jump to the location of a mob with a certain ckey*/
+	/client/proc/jumptomob, /*allows us to jump to a specific mob*/
+	/client/proc/jumptoturf, /*allows us to jump to a specific turf*/
+	/client/proc/admin_call_shuttle, /*allows us to call the emergency shuttle*/
+	/client/proc/admin_cancel_shuttle, /*allows us to cancel the emergency shuttle, sending it back to centcom*/
+	/client/proc/admin_disable_shuttle, /*allows us to disable the emergency shuttle admin-wise so that it cannot be called*/
+	/client/proc/admin_enable_shuttle,  /*undoes the above*/
+	/client/proc/cmd_admin_direct_narrate, /*send text directly to a player with no padding. Useful for narratives and fluff-text*/
+	/client/proc/cmd_admin_world_narrate, /*sends text to all players with no padding*/
+	/client/proc/cmd_admin_local_narrate, /*sends text to all mobs within view of atom*/
+	/client/proc/cmd_admin_create_centcom_report,
+	/client/proc/cmd_change_command_name,
+	/client/proc/cmd_admin_check_player_exp, /* shows players by playtime */
+	/client/proc/toggle_combo_hud, // toggle display of the combination pizza antag and taco sci/med/eng hud
+	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
+	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
 	/client/proc/respawn_character,
-//	/datum/admins/proc/open_borgopanel,
-//	/datum/admins/proc/view_all_circuits,
-//	/datum/admins/proc/view_all_sdql_spells,
-//	/datum/admins/proc/known_alts_panel,
-//	/datum/admins/proc/paintings_manager,
+	/datum/admins/proc/open_borgopanel,
+	/datum/admins/proc/view_all_circuits,
+	/datum/admins/proc/view_all_sdql_spells,
+	/datum/admins/proc/known_alts_panel,
+	/datum/admins/proc/paintings_manager,
 	/datum/admins/proc/display_tags,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
-//GLOBAL_LIST_INIT(admin_verbs_sounds, list(/client/proc/play_local_sound, /client/proc/play_direct_mob_sound, /client/proc/play_sound, /client/proc/set_round_end_sound))
-//GLOBAL_PROTECT(admin_verbs_sounds)
-GLOBAL_LIST_INIT(admin_verbs_fun, list( //No Fun allowed.
-/*	/client/proc/cmd_select_equipment,
+GLOBAL_LIST_INIT(admin_verbs_sounds, list(/client/proc/play_local_sound, /client/proc/play_direct_mob_sound, /client/proc/play_sound, /client/proc/set_round_end_sound))
+GLOBAL_PROTECT(admin_verbs_sounds)
+GLOBAL_LIST_INIT(admin_verbs_fun, list(
+	/client/proc/cmd_select_equipment,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/set_dynex_scale,
 	/client/proc/drop_dynex_bomb,
 	/client/proc/cinematic,
 	/client/proc/summon_ert,
-	/client/proc/cmd_admin_add_freeform_ai_law,*/
+	/client/proc/cmd_admin_add_freeform_ai_law,
 	/client/proc/object_say,
-/*	/client/proc/toggle_random_events,
+	/client/proc/toggle_random_events,
 	/client/proc/set_ooc,
 	/client/proc/reset_ooc,
 	/client/proc/forceEvent,
 	/client/proc/admin_change_sec_level,
-	/client/proc/toggle_nuke,*/
-//	/client/proc/run_weather,
-//	/client/proc/run_particle_weather,  //MOJAVE MODULE OUTDOOR_EFFECTS
-/*	/client/proc/mass_zombie_infection,
+	/client/proc/toggle_nuke,
+	/client/proc/run_weather,
+	/client/proc/run_particle_weather,  //MOJAVE MODULE OUTDOOR_EFFECTS
+	/client/proc/mass_zombie_infection,
 	/client/proc/mass_zombie_cure,
 	/client/proc/polymorph_all,
-	/client/proc/show_tip, */
-//	/client/proc/smite,
-/*	/client/proc/admin_away,
+	/client/proc/show_tip,
+	/client/proc/smite,
+	/client/proc/admin_away,
 	/client/proc/add_mob_ability,
 	/client/proc/spawn_vapour, //MOJAVE MODULE VAPOUR
-	/datum/admins/proc/station_traits_panel, */
+	/datum/admins/proc/station_traits_panel,
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
-GLOBAL_LIST_INIT(admin_verbs_spawn, list(/datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character))
+GLOBAL_LIST_INIT(admin_verbs_spawn, list(/datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character, /datum/admins/proc/beaker_panel))
 GLOBAL_PROTECT(admin_verbs_spawn)
 GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
 GLOBAL_PROTECT(admin_verbs_server)
@@ -143,12 +124,12 @@ GLOBAL_PROTECT(admin_verbs_server)
 	/datum/admins/proc/end_round,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
-//	/client/proc/everyone_random,
-//	/datum/admins/proc/toggleAI,
+	/client/proc/everyone_random,
+	/datum/admins/proc/toggleAI,
 	/client/proc/cmd_admin_delete, /*delete an instance/object/mob/etc*/
 	/client/proc/cmd_debug_del_all,
-//	/client/proc/toggle_random_events,
-//	/client/proc/forcerandomrotate,
+	/client/proc/toggle_random_events,
+	/client/proc/forcerandomrotate,
 	/client/proc/adminchangemap,
 	/client/proc/panicbunker,
 	/client/proc/toggle_interviews,
@@ -168,40 +149,40 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/cmd_admin_delete,
 	/client/proc/cmd_debug_del_all,
 	/client/proc/restart_controller,
-//	/client/proc/enable_mapping_verbs,
+	/client/proc/enable_mapping_verbs,
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
 	/client/proc/SDQL2_query,
 	/client/proc/test_movable_UI,
 	/client/proc/test_snap_UI,
 	/client/proc/debugNatureMapGenerator,
-//	/client/proc/check_bomb_impacts,
-//	/proc/machine_upgrade,
-//	/client/proc/populate_world,
-//	/client/proc/get_dynex_power, //*debug verbs for dynex explosions.
-//	/client/proc/get_dynex_range, //*debug verbs for dynex explosions.
-//	/client/proc/set_dynex_scale,
+	/client/proc/check_bomb_impacts,
+	/proc/machine_upgrade,
+	/client/proc/populate_world,
+	/client/proc/get_dynex_power, //*debug verbs for dynex explosions.
+	/client/proc/get_dynex_range, //*debug verbs for dynex explosions.
+	/client/proc/set_dynex_scale,
 	/client/proc/cmd_display_del_log,
-//	/client/proc/outfit_manager,
-//	/client/proc/generate_wikichem_list,
-//	/client/proc/modify_goals,
+	/client/proc/outfit_manager,
+	/client/proc/generate_wikichem_list,
+	/client/proc/modify_goals,
 	/client/proc/debug_huds,
-//	/client/proc/map_template_load,
-//	/client/proc/map_template_upload,
-//	/client/proc/jump_to_ruin,
-//	/client/proc/clear_dynamic_transit,
-//	/client/proc/run_empty_query,
-//	/client/proc/toggle_medal_disable,
+	/client/proc/map_template_load,
+	/client/proc/map_template_upload,
+	/client/proc/jump_to_ruin,
+	/client/proc/clear_dynamic_transit,
+	/client/proc/run_empty_query,
+	/client/proc/toggle_medal_disable,
 	/client/proc/view_runtimes,
-//	/client/proc/pump_random_event,
+	/client/proc/pump_random_event,
 	/client/proc/cmd_display_init_log,
 	/client/proc/cmd_display_overlay_log,
 	/client/proc/reload_configuration,
 	/client/proc/atmos_control,
-//	/client/proc/reload_cards,
-//	/client/proc/validate_cards,
-//	/client/proc/test_cardpack_distribution,
-//	/client/proc/print_cards,
+	/client/proc/reload_cards,
+	/client/proc/validate_cards,
+	/client/proc/test_cardpack_distribution,
+	/client/proc/print_cards,
 	#ifdef TESTING
 	/client/proc/check_missing_sprites,
 	/client/proc/run_dynamic_simulations,
@@ -210,12 +191,12 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/create_or_modify_area,
 	/client/proc/check_timer_sources,
 	/client/proc/toggle_cdn,
-//	/client/proc/cmd_sdql_spell_menu,
-//	/client/proc/adventure_manager,
-//	/client/proc/load_circuit,
+	/client/proc/cmd_sdql_spell_menu,
+	/client/proc/adventure_manager,
+	/client/proc/load_circuit,
 	/client/proc/cmd_admin_toggle_fov,
-//	/client/proc/cmd_admin_debug_traitor_objectives,
-//	/client/proc/spawn_debug_full_crew,
+	/client/proc/cmd_admin_debug_traitor_objectives,
+	/client/proc/spawn_debug_full_crew,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, GLOBAL_PROC_REF(release)))
 GLOBAL_PROTECT(admin_verbs_possess)
@@ -229,45 +210,45 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/set_ooc,
 	/client/proc/reset_ooc,
 	/client/proc/deadmin,
-//	/datum/admins/proc/show_traitor_panel,
-//	/datum/admins/proc/show_skill_panel,
+	/datum/admins/proc/show_traitor_panel,
+	/datum/admins/proc/show_skill_panel,
 	/datum/admins/proc/toggleenter,
 	/datum/admins/proc/toggleguests,
 	/datum/admins/proc/announce,
 	/datum/admins/proc/set_admin_notice,
 	/client/proc/admin_ghost,
-//	/client/proc/toggle_view_range,
-//	/client/proc/cmd_admin_subtle_message,
-//	/client/proc/cmd_admin_headset_message,
+	/client/proc/toggle_view_range,
+	/client/proc/cmd_admin_subtle_message,
+	/client/proc/cmd_admin_headset_message,
 	/client/proc/cmd_admin_check_contents,
-//	/datum/admins/proc/access_news_network,
-//	/client/proc/admin_call_shuttle,
-//	/client/proc/admin_cancel_shuttle,
-//	/client/proc/cmd_admin_direct_narrate,
-//	/client/proc/cmd_admin_world_narrate,
-//	/client/proc/cmd_admin_local_narrate,
-//	/client/proc/play_local_sound,
-//	/client/proc/play_sound,
-//	/client/proc/set_round_end_sound,
-//	/client/proc/cmd_select_equipment,
-//	/client/proc/cmd_admin_gib_self,
-//	/client/proc/drop_bomb,
-//	/client/proc/drop_dynex_bomb,
-//	/client/proc/get_dynex_range,
-//	/client/proc/get_dynex_power,
-//	/client/proc/set_dynex_scale,
-//	/client/proc/cinematic,
-//	/client/proc/cmd_admin_add_freeform_ai_law,
-//	/client/proc/cmd_admin_create_centcom_report,
-//	/client/proc/cmd_change_command_name,
+	/datum/admins/proc/access_news_network,
+	/client/proc/admin_call_shuttle,
+	/client/proc/admin_cancel_shuttle,
+	/client/proc/cmd_admin_direct_narrate,
+	/client/proc/cmd_admin_world_narrate,
+	/client/proc/cmd_admin_local_narrate,
+	/client/proc/play_local_sound,
+	/client/proc/play_sound,
+	/client/proc/set_round_end_sound,
+	/client/proc/cmd_select_equipment,
+	/client/proc/cmd_admin_gib_self,
+	/client/proc/drop_bomb,
+	/client/proc/drop_dynex_bomb,
+	/client/proc/get_dynex_range,
+	/client/proc/get_dynex_power,
+	/client/proc/set_dynex_scale,
+	/client/proc/cinematic,
+	/client/proc/cmd_admin_add_freeform_ai_law,
+	/client/proc/cmd_admin_create_centcom_report,
+	/client/proc/cmd_change_command_name,
 	/client/proc/object_say,
-//	/client/proc/toggle_random_events,
+	/client/proc/toggle_random_events,
 	/datum/admins/proc/startnow,
 	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
-//	/client/proc/everyone_random,
-//	/datum/admins/proc/toggleAI,
+	/client/proc/everyone_random,
+	/datum/admins/proc/toggleAI,
 	/client/proc/restart_controller,
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/callproc,
@@ -277,17 +258,17 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_del_all,
-//	/client/proc/enable_mapping_verbs,
-//	/proc/possess,
-//	/proc/release,
+	/client/proc/enable_mapping_verbs,
+	/proc/possess,
+	/proc/release,
 	/client/proc/reload_admins,
-//	/client/proc/panicbunker,
+	/client/proc/panicbunker,
 	/client/proc/toggle_interviews,
-//	/client/proc/admin_change_sec_level,
-//	/client/proc/toggle_nuke,
+	/client/proc/admin_change_sec_level,
+	/client/proc/toggle_nuke,
 	/client/proc/cmd_display_del_log,
-//	/client/proc/toggle_combo_hud,
-//	/client/proc/spawn_vapour, // MOJAVE MODULE VAPOUR
+	/client/proc/toggle_combo_hud,
+	/client/proc/spawn_vapour, // MOJAVE MODULE VAPOUR
 	/client/proc/debug_huds
 	))
 GLOBAL_PROTECT(admin_verbs_hideable)
@@ -298,14 +279,14 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 		var/rights = holder.rank.rights
 		add_verb(src, GLOB.admin_verbs_default)
-/*		if(rights & R_BUILD)
-			add_verb(src, /client/proc/togglebuildmodeself) */
+		if(rights & R_BUILD)
+			add_verb(src, /client/proc/togglebuildmodeself)
 		if(rights & R_ADMIN)
 			add_verb(src, GLOB.admin_verbs_admin)
 		if(rights & R_BAN)
 			add_verb(src, GLOB.admin_verbs_ban)
-	//	if(rights & R_FUN)
-	//		add_verb(src, GLOB.admin_verbs_fun)
+		if(rights & R_FUN)
+			add_verb(src, GLOB.admin_verbs_fun)
 		if(rights & R_SERVER)
 			add_verb(src, GLOB.admin_verbs_server)
 		if(rights & R_DEBUG)
@@ -318,8 +299,8 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			add_verb(src, /client/proc/stealth)
 		if(rights & R_ADMIN)
 			add_verb(src, GLOB.admin_verbs_poll)
-//		if(rights & R_SOUND)
-//			add_verb(src, GLOB.admin_verbs_sounds)
+		if(rights & R_SOUND)
+			add_verb(src, GLOB.admin_verbs_sounds)
 			if(CONFIG_GET(string/invoke_youtubedl))
 				add_verb(src, /client/proc/play_web_sound)
 		if(rights & R_SPAWN)
@@ -328,22 +309,22 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /client/proc/remove_admin_verbs()
 	remove_verb(src, list(
 		GLOB.admin_verbs_default,
-//		/client/proc/togglebuildmodeself,
+		/client/proc/togglebuildmodeself,
 		GLOB.admin_verbs_admin,
 		GLOB.admin_verbs_ban,
-//		GLOB.admin_verbs_fun,
+		GLOB.admin_verbs_fun,
 		GLOB.admin_verbs_server,
 		GLOB.admin_verbs_debug,
-//		GLOB.admin_verbs_possess,
+		GLOB.admin_verbs_possess,
 		GLOB.admin_verbs_permissions,
 		/client/proc/stealth,
 		GLOB.admin_verbs_poll,
-//		GLOB.admin_verbs_sounds,
-//		/client/proc/play_web_sound,
+		GLOB.admin_verbs_sounds,
+		/client/proc/play_web_sound,
 		GLOB.admin_verbs_spawn,
 		/*Debug verbs added by "show debug verbs"*/
 		GLOB.admin_verbs_debug_mapping,
-//		/client/proc/disable_mapping_verbs,
+		/client/proc/disable_mapping_verbs,
 		/client/proc/readmin
 		))
 
@@ -530,7 +511,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	message_admins("[key_name_admin(usr)] has turned stealth mode OFF")
 
 #undef STEALTH_MODE_TRAIT
-/*
+
 /client/proc/drop_bomb()
 	set category = "Admin.Fun"
 	set name = "Drop Bomb"
@@ -619,14 +600,14 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	GLOB.DYN_EX_SCALE = ex_scale
 	log_admin("[key_name(usr)] has modified Dynamic Explosion Scale: [ex_scale]")
 	message_admins("[key_name_admin(usr)] has  modified Dynamic Explosion Scale: [ex_scale]")
-*/
+
 /client/proc/atmos_control()
 	set name = "Atmos Control Panel"
 	set category = "Debug"
 	if(!check_rights(R_DEBUG))
 		return
 	SSair.ui_interact(mob)
-/*
+
 /client/proc/reload_cards()
 	set name = "Reload Cards"
 	set category = "Debug"
@@ -703,8 +684,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	else
 		spell_recipient.AddSpell(new_spell)
 		message_admins(span_danger("Spells given to mindless mobs will not be transferred in mindswap or cloning!"))
-*/
-/*
+
 /client/proc/remove_spell(mob/removal_target in GLOB.mob_list)
 	set category = "Admin.Fun"
 	set name = "Remove Spell"
@@ -736,7 +716,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Give Disease") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] gave [key_name(T)] the disease [D].")
 	message_admins(span_adminnotice("[key_name_admin(usr)] gave [key_name_admin(T)] the disease [D]."))
-*/
+
 /client/proc/object_say(obj/O in world)
 	set category = "Admin.Events"
 	set name = "OSay"
@@ -748,7 +728,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	log_admin("[key_name(usr)] made [O] at [AREACOORD(O)] say \"[message]\"")
 	message_admins(span_adminnotice("[key_name_admin(usr)] made [O] at [AREACOORD(O)]. say \"[message]\""))
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Object Say") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-	/*
 /client/proc/togglebuildmodeself()
 	set name = "Toggle Build Mode Self"
 	set category = "Admin.Events"
@@ -763,7 +742,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set category = "Admin.Game"
 	if(holder)
 		src.holder.output_ai_laws()
-*/
+
 /client/proc/deadmin()
 	set name = "Deadmin"
 	set category = "Admin"
